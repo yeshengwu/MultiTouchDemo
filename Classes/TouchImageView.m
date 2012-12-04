@@ -29,6 +29,7 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.superview bringSubviewToFront:self];
     NSMutableSet *currentTouches = [[[event touchesForView:self] mutableCopy] autorelease];
     [currentTouches minusSet:touches];
     if ([currentTouches count] > 0) {
